@@ -20,8 +20,8 @@ namespace Service.MappingProfiles
 
             else
             {
-                //var Url = $"https://localhost: 7050/{source.PictureUrl}";
-                var Url = $"{_configuration.GetSection( "Urls")[ "BaseUrl"]} {source.PictureUrl}";
+                //var Url = $"https://localhost:7075/{source.PictureUrl}";
+                var Url = $"{_configuration.GetSection("Urls")["BaseUrl"]}{source.PictureUrl}";
                 return Url;
             }
         }

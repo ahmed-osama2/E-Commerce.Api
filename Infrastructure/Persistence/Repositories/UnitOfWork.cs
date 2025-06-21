@@ -19,13 +19,14 @@ namespace Persistence.Repositories
             // Dic<string, Object> == > string Key [Name Of Type] -- Object Object From Generic Repository
             //if (_repositories. ContainsKey(typeName))
             // return (IGenericRepository<TEntity, Tkey>) _repositories[typeName];
-            if (_repositories.TryGetValue(typeName, value: out object? value))
+            if (_repositories.TryGetValue(typeName,out object? value))
                 return (IGenericRepository<TEntity, Tkey>)value;
 
             else
             {
                 // Create Object
-                var Repo = new GenericRepository<TEntity, Tkey>(_dbContext);
+                  var Repo = new GenericRepository<TEntity,Tkey>(_dbContext);
+
                 // Store Object in Dic
                 _repositories["typeName"] = Repo;
                 // Return Object
