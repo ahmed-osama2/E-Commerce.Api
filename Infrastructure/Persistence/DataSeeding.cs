@@ -34,7 +34,7 @@ namespace Persistence
                        await _dbContext.ProductBrands.AddRangeAsync(ProductBrands);
                     }
                 }
-
+                 
                 if (!_dbContext.ProductTypes.Any())
                 {
                     //var ProductTypeDate = File.ReadAllText(@"..\Infrastructure\Persistence\Data\DataSead\types.json");
